@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Earn Points</title>
+  <style>
+    .btn{
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+    .btn:hover{
+      cursor: pointer;
+    }
+    .card:hover{
+      
+      cursor: pointer;
+      transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+      box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.848);
+    }
+    .card-container {
+      align-items: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
+      grid-gap: 50px;	      
+      margin: 5% 20% ;
+      
+    }
+    .card {	
+      background-color: white;
+      background:rgb(255, 255, 255);
+      border-radius: 15px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.848);
+      padding: 20px;
+      text-align: center;      
+    }
+
+    body{
+      background-image: url('./bg1.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+  </style>
+
+</head>
+<body align='center'">    
+    <img src="./images/mr.png" height="5%" width="5%" style="padding: 20px;">
+    <h2>Microsoft Reward Points Earning</h2>
+    
+    <div class="card-container">
+      <div class="card">    
+        <img src="./images/laptop.gif" height="70%" width="70%"><br>   
+        <button onclick="desktop()" class="btn" id="button1"><h4>Earn Points</h4></button>
+      </div>
+      <div class="card">
+        <img src="./images/Untitled design.gif" height="70%" width="70%"><br>
+        <button onclick="mobile()" class="btn" id="button2"><h4>Earn Points</h4></button>
+      </div>
+    </div>
+  <script>
+    function desktop() {
+      var counter = 0;
+      var arr=['facebook', 'instagram', 'IIT', 'virat kohli', 'ms dhoni', 'biryani', 'royal enfield', 'rasagulla','laddo', 'cooking',
+               'washing machine', 'air conditioner', 'india', 'audi', 'ducati', 'bmw', 'ford', 'volks wagen', 'ferrari', 'bugati', 'qaw','qqr', 'bbc', 'cod',
+               'pubg', 'bgmi', 'free fire', 'million','java', 'c++', 'c', 'five', 'four', 'three', 'two', 'one', 'zero'];
+
+      // Open the first URL in a new tab
+      const firstTab = window.open('https://www.bing.com/search?q='+ arr[0], '_blank');
+
+      // Open subsequent URLs in the first tab
+      for (let i = 1; i < arr.length; i++) {
+          setTimeout(function() {      
+            firstTab.location.href = 'https://www.bing.com/search?q='+ arr[i];
+          }, i * 3000); // 3000 milliseconds = 3 seconds
+      }
+    }
+    
+
+    function mobile() {
+      var counter = 0;
+      var arr=['mobiles', 'samsung', 'galaxy', 'kharagpur', 'guwahati', 'hyderabad', 'buds', 'earbhones','bags', 'shirts',
+               'pants', 'business', 'tyres', 'car', 'hyndai', 'tata', 'ford', 'volks wagen', 'ferrari', 'bugati', 'qaw','qqr', 'zero'];
+
+      // Open the first URL in a new tab
+      const firstTab = window.open('https://www.bing.com/search?q='+ arr[0], '_blank');
+
+      // Open subsequent URLs in the first tab
+      for (let i = 1; i < arr.length; i++) {
+          setTimeout(function() {      
+            firstTab.location.href = 'https://www.bing.com/search?q='+ arr[i];
+          }, i * 4000); // 4000 milliseconds = 4 seconds
+      }
+    }
+
+    var button = document.getElementById("button1");
+    button.style.backgroundColor = "green";
+    button.addEventListener("click", function() {
+      this.style.backgroundColor = "silver";
+      this.disabled = this.disabled || true;
+    });
+
+    var button = document.getElementById("button2");
+    button.style.backgroundColor = "green";
+    button.addEventListener("click", function() {
+      this.style.backgroundColor = "silver";
+      this.disabled = this.disabled || true;
+    });
+    
+  </script>
+</body>
+</html>
